@@ -7,7 +7,7 @@
 - I am asked to input a username
 - When I hover over a mood
 - I am given a definition of the mood
-    - Moods: (Romantic, Party/Hype or Spicy, Melancholy, )
+    - Moods: (Romantic, Party/Hype and/or Spicy, Melancholy, )
 - When I select a mood
 - I am taken to a seperate page that gives me a list of songs and drinks
 - When I select a song or drink
@@ -33,3 +33,7 @@
     - Gives option to delete items from playlist
     - Gives option to delete user and start over
 
+
+
+- Extra Features
+    - Non-alcholic drink options
