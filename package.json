@@ -1,0 +1,25 @@
+{
+  "name": "project-1",
+  "description": "## Acceptance Criteria",
+  "version": "1.0.0",
+  "main": "sass/mystyles.scss",
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "node-sass": "^7.0.3"
+  },
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jstaples50/Project-1.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jstaples50/Project-1/issues"
+  },
+  "homepage": "https://github.com/jstaples50/Project-1#readme"
+}
