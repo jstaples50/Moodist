@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My custom Bulma website</title>
-    <link rel="stylesheet" href="css/mystyles.css">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./Develop/style.css">
+    <script src="https://kit.fontawesome.com/db38d07029.js" crossorigin="anonymous"></script>
   </head>
   <body>
-     <h1 class="title">
-        Bulma
-      </h1>
-
-      <p class="subtitle">
-        Modern CSS framework based on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox</a>
-      </p>
-
-      <div class="field">
-        <div class="control">
-          <input class="input" type="text" placeholder="Input">
+    
+    <section class="hero is-link is-fullheight">
+      <div class="hero-body">
+        
+        <div class="container has-text-centered">
+          <p class="title">
+            What mood are you feeling?
+          </p>
+          <p class="title">
+          <button class="button">
+            <span class="icon is-dark">
+              <i class="fa-regular fa-face-grin-tongue-squint"></i>
+            </span>
+          </button>
+          <button class="button">
+          <span class="icon has-text-success">
+            <i class="fa-regular fa-face-smile"></i>
+          </span>
+        </button>
+        <button class="button">
+          <span class="icon has-text-warning">
+            <i class="fa-regular fa-face-sad-tear"></i>
+          </span>
+        </button>
+        <button class="button">
+          <span class="icon has-text-danger">
+            <i class="fa-solid fa-face-grin-hearts"></i>
+          </span>
+        </button>
+        </p>
         </div>
       </div>
+      
+    </section>
+    
 
-      <div class="field">
-        <p class="control">
-          <span class="select">
-            <select>
-              <option>Select dropdown</option>
-            </select>
-          </span>
-        </p>
-      </div>
-
-      <div class="buttons">
-        <a class="button is-primary">Primary</a>
-        <a class="button is-link">Link</a>
-      </div>
   </body>
 </html>
