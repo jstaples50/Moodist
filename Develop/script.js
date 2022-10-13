@@ -6,7 +6,7 @@
 
 // **YOUTUBE FEATURE**
 
-// **GLOBAL VARIABLES** 
+// youtube variables 
 
 var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
 var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
@@ -29,7 +29,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-// **FUNCTIONS**
+// youtube functions
 
 function fetchYoutubeData() {
     fetch(youtubeUrl)
@@ -48,8 +48,8 @@ function fetchYoutubeData() {
     })
 }
 
-fetchYoutubeData();
-onYouTubeIframeAPIReady();
+
+
 // player.playVideo();
 
 // Play video automatically when loaded
@@ -84,21 +84,16 @@ onYouTubeIframeAPIReady();
 
 
 
+// **COCKTAIL FEATURE**
+
+
+
+
+
 
 // **TESTS**
 
 // **EXECUTION**
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
 
-});
-
-
-
-
-
-
-
-
-
-// **COCKTAIL FEATURE**
+fetchYoutubeData();
+onYouTubeIframeAPIReady();
