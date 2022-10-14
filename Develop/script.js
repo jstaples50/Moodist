@@ -20,16 +20,22 @@ function onYouTubeIframeAPIReady() {
         videoId: videoId,
         playerVars: {
         'playsinline': 1,
-        'autoplay': 0
+        'autoplay': 1
         },
         events: {
-        // 'onReady': onPlayerReady,
+        'onReady': onPlayerReady,
         // 'onStateChange': onPlayerStateChange
         }
     });
+    
 }
 
 // youtube functions
+
+
+function onPlayerReady() {
+    fetchYoutubeData();
+}
 
 function fetchYoutubeData() {
     fetch(youtubeUrl)
@@ -40,10 +46,11 @@ function fetchYoutubeData() {
         console.log(data);
         // videoId = data.items[0].id.videoId;
         videoId = '7Gc4PVl_QeQ'
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        // var tag = document.createElement('script');
+        // tag.src = "https://www.youtube.com/iframe_api";
+        // var firstScriptTag = document.getElementsByTagName('script')[0];
+        // firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        player.loadVideoById(videoId, 0);
         // onYouTubeIframeAPIReady();
     })
 }
@@ -95,5 +102,5 @@ function fetchYoutubeData() {
 
 // **EXECUTION**
 
-fetchYoutubeData();
-onYouTubeIframeAPIReady();
+// fetchYoutubeData();
+// onYouTubeIframeAPIReady();
