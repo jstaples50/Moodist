@@ -1,8 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-
-
-
 #smile:hover{
     transform: scale(1.1);
     z-index: 3; 
