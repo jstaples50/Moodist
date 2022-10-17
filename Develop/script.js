@@ -95,70 +95,76 @@ function fetchYoutubeData() {
 
 
 //COCKTAIL CODE START 
-//IN DUMMY TEST this java was linked to random HTML page. Need to link html drink-practice or random html to view. 
+//var result = document.querySelector("result");
 
-//console.log('dummy.js loaded')
-//making sure java has loaded 
+//var url = "https:www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka";
 
-//may be unnecessary in the example
-//document.addEventListener('prechange', function(event) {
-  //  document.querySelector()
-//})
+//var data = document.querySelector("tequila")
+
+//var userInp = data
+
+//var getInfo = () => {
+ 
+    //fetch(url + userInp)
+      //.then((response) => response.json())
+      //.then((data) => {
+        //document.querySelector("tequila").value = ""; // here is where I am confusing myself 
+        //console.log(data);
+        //console.log(data.drinks[0]);
+        //var myDrink = data.drinks[0];
+        ///console.log(myDrink.strDrink);
+        //console.log(myDrink.strDrinkThumb);
+        //console.log(myDrink.strInstructions);
+        //var count = 1;
+        //var ingredients = [];
+        //for (var i in myDrink) {
+          //var ingredient = "";
+          //var measure = "";
+          //if (i.startsWith("strIngredient") && myDrink[i]) {
+            //ingredient = myDrink[i];
+            //if (myDrink[`strMeasure` + count]) {
+              //measure = myDrink[`strMeasure` + count];
+            //} else {
+              //measure = "";
+            //}
+            //count += 1;
+            //ingredients.push(`${measure} ${ingredient}`);
+          //}
+        //}
+        //console.log(ingredients);
+        //result.innerHTML = `
+      //<img src=${myDrink.strDrinkThumb}>
+      //<h2>${myDrink.strDrink}</h2>
+      //<h3>Ingredients:</h3>
+      //<ul class="ingredients"></ul>
+      //<h3>Instructions:</h3>
+      //<p>${myDrink.strInstructions}</p>
+      //`;
+        //var ingredientsCon = document.querySelector(".ingredients");
+        //ingredients.forEach((item) => {
+          //var listItem = document.createElement("li");
+          //listItem.innerText = item;
+          //ingredientsCon.appendChild(listItem);
+        //});
+      //})
+      //.catch(() => {
+        //result.innerHTML = `<h3 class="msg">Please enter a valid input</h3>`;
+      //};//);
+  //};
+
+//window.addEventListener("load", getInfo);
 
 
-//function getRandomCocktail() {
-    //fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-   // .then(
-    //function(response) {
-        //if (response.status !== 200) {
-        //console.log('Looks like there was a problem. Status Code: ' +
-           // response.status);
-       // return;
-      //  } <----comment all in to run 
-
-        // Examine the text in the response
-        //response.json().then(function(data) {
-        //console.log(data); 
-       // displayRandomCocktail(data); //<---open this and close above to display elements 
-       
-       //TO TEST: comment out console.log(data) and comment in displayRandomCocktail. To view data pulled from api comment out 
-       //displayRandomCocktail and comment in console.log(data). 
-       
-       //});
-    //}
-    //)
-    //.catch(function(err) {
-    //console.log('Fetch Error :-S', err);
-    //});
-//} <--- Need to comment all above minus TO TEST
-
-//getRandomCocktail();//runs the api to pull drink data 
-
-//function displayRandomCocktail(cocktail){
-    //console.log(cocktail.drinks[0].strDrink);<----comment in at LEAST one to run
-   // console.log(cocktail.drinks[0].strGlass);
-   // console.log(cocktail.drinks[0].strIngredient);
-   // console.log(cocktail.drinks[0].strInstructions);
-    //console.log(cocktail.drinks[0].strMeasure);
-    //when active will display from api the following: 
 
 
-// strDrink: Displays drink name 
-//strDrinkThumb: Displays picture of drink if available will need to input code for null result to display image not
-//found. 
-//strGlass: recommended serving glass (may not need) 
-//strIngredient: This is listed 1-15 and result is null if no other ingredients are present. Need to build this to continue
-//and pull ingredient and move one forward each time until it hits null then stop. 
-//strInstructions: displays how to make drink 
-//strMeasure: same as ingredient shows how much of each ingredient 
 
-//Current issues Ingredients and Measure have multiple variable that I need to possible make into an array to have console log pull data. 
-//They console log as undefined. Need to write code to pull all before
-//null and console log. Once complete can work on displaying to page. 
 
-//TO TEST: 
-//Comment in above variables from console.log and refresh page. Will currently display Drink Name, Glass type, Ingredients as undefined, Instructions,
-//Measure as undefined. 
 
-//To view data from current api see line 130.
+
+
+
+
+
+
+
 
