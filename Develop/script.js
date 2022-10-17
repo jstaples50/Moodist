@@ -1,4 +1,4 @@
-// **GLOBAL VARIABLE** 
+// // **GLOBAL VARIABLE** 
 
 var moodIconEl = $('button');
 $(moodIconEl).on('click', moodSelection());
