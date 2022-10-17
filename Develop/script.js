@@ -1,8 +1,26 @@
 // **GLOBAL VARIABLE** 
 
+var moodIconEl = $('button');
+$(moodIconEl).on('click', moodSelection());
+var mood;
 
 
+// **HOMEPAGE FUNCTIONS**
 
+function moodSelection (event) {
+    var moodSelection = event.Target.id 
+    switch (moodSelection) {
+        case 'party':
+            mood = partySongs;
+        case 'happy':
+            mood = happySongs;
+        case 'sad':
+            mood = sadSongs;
+        case 'romantic':
+            mood = romanticSongs;
+    }
+
+};
 
 // **YOUTUBE FEATURE**
 
@@ -10,7 +28,20 @@
 
 var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
 var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
+
+// var youtubePlaylistUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=id&maxResults=1&q=dog&key=${youtubeApiKey}`;
+
+var partySongs = 'JTjoH1HNkbs';
+var happySongs = 'uNd5kvrGHjk';
+var sadSongs = 'iiADY4xmH_o';
+var romanticSongs = '3cVjaKY02lA';
+
+// https://www.youtube.com/playlist?list=PLuIQYSWMlyQXtk7AVxC9aPJiEv3Pn_mal
+
+
 var videoId;
+
+// youtube functions
 
 var player;
 function onYouTubeIframeAPIReady() {
@@ -30,9 +61,6 @@ function onYouTubeIframeAPIReady() {
     
 }
 
-// youtube functions
-
-
 function onPlayerReady() {
     fetchYoutubeData();
 }
@@ -44,8 +72,9 @@ function fetchYoutubeData() {
     })
     .then (function (data) {
         console.log(data);
-        videoId = '7Gc4PVl_QeQ'
-        player.loadVideoById(videoId, 0);
+        videoId = 'WHuBW3qKm9g'
+        player.loadVideoById(`${sadSongs}`, 0);
+        // player.loadPlaylist(partySongs, 0, 0)
     })
 }
        
