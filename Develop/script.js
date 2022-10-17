@@ -1,13 +1,3 @@
-// **GLOBAL VARIABLE** 
-
-
-
-
-
-// **YOUTUBE FEATURE**
-
-// youtube variables 
-
 var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
 var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
 var videoId;
@@ -15,8 +5,6 @@ var videoId;
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '200',
-        width: '500',
         videoId: videoId,
         playerVars: {
         'playsinline': 1,
@@ -170,11 +158,3 @@ onYouTubeIframeAPIReady();
 
 //To view data from current api see line 130.
 
-
-
-
-
-
-
-    
-//} 
