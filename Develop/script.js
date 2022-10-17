@@ -46,8 +46,6 @@ var videoId;
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '200',
-        width: '500',
         videoId: videoId,
         playerVars: {
         'playsinline': 1,
@@ -164,11 +162,3 @@ function fetchYoutubeData() {
 
 //To view data from current api see line 130.
 
-
-
-
-
-
-
-    
-//} 
