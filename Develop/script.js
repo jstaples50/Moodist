@@ -1,6 +1,47 @@
+// **GLOBAL VARIABLE** 
+
+var moodIconEl = $('button');
+$(moodIconEl).on('click', moodSelection());
+var mood;
+
+
+// **HOMEPAGE FUNCTIONS**
+
+function moodSelection (event) {
+    var moodSelection = event.Target.id 
+    switch (moodSelection) {
+        case 'party':
+            mood = partySongs;
+        case 'happy':
+            mood = happySongs;
+        case 'sad':
+            mood = sadSongs;
+        case 'romantic':
+            mood = romanticSongs;
+    }
+
+};
+
+// **YOUTUBE FEATURE**
+
+// youtube variables 
+
 var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
 var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
+
+// var youtubePlaylistUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=id&maxResults=1&q=dog&key=${youtubeApiKey}`;
+
+var partySongs = 'JTjoH1HNkbs';
+var happySongs = 'uNd5kvrGHjk';
+var sadSongs = 'iiADY4xmH_o';
+var romanticSongs = '3cVjaKY02lA';
+
+// https://www.youtube.com/playlist?list=PLuIQYSWMlyQXtk7AVxC9aPJiEv3Pn_mal
+
+
 var videoId;
+
+// youtube functions
 
 var player;
 function onYouTubeIframeAPIReady() {
@@ -8,16 +49,19 @@ function onYouTubeIframeAPIReady() {
         videoId: videoId,
         playerVars: {
         'playsinline': 1,
-        'autoplay': 0
+        'autoplay': 1
         },
         events: {
-        // 'onReady': onPlayerReady,
+        'onReady': onPlayerReady,
         // 'onStateChange': onPlayerStateChange
         }
     });
+    
 }
 
-// youtube functions
+function onPlayerReady() {
+    fetchYoutubeData();
+}
 
 function fetchYoutubeData() {
     fetch(youtubeUrl)
@@ -26,51 +70,12 @@ function fetchYoutubeData() {
     })
     .then (function (data) {
         console.log(data);
-        // videoId = data.items[0].id.videoId;
-        videoId = '7Gc4PVl_QeQ'
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        // onYouTubeIframeAPIReady();
+        videoId = 'WHuBW3qKm9g'
+        player.loadVideoById(`${sadSongs}`, 0);
+        // player.loadPlaylist(partySongs, 0, 0)
     })
 }
-
-
-
-// player.playVideo();
-
-// Play video automatically when loaded
-
-// function onPlayerStateChange(event) {
-//     if (event.data == YT.PlayerState.CUED) {
-//         event.target.playVideo();
-//         console.log('ready');
-//         }
-//     }
-
-// 4. The API will call this function when the video player is ready.
-// function onPlayerReady(event) {
-// event.target.playVideo();
-// }
-
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-
-// var done = false;
-// function onPlayerStateChange(event) {
-// if (event.data == YT.PlayerState.PLAYING && !done) {
-//     setTimeout(stopVideo, 6000);
-//     done = true;
-//     }
-// }
-
-// function stopVideo() {
-// player.stopVideo();
-// }        
-
-
+       
 
 // **COCKTAIL FEATURE**
 
@@ -83,8 +88,7 @@ function fetchYoutubeData() {
 
 // **EXECUTION**
 
-fetchYoutubeData();
-onYouTubeIframeAPIReady();
+
 
 
 
