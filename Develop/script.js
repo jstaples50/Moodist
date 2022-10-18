@@ -1,33 +1,23 @@
-// **GLOBAL VARIABLE** 
 
-var moodIconEl = $('button');
-$(moodIconEl).on('click', moodSelection());
+// **GLOBAL VARIABLE** 
+var alcohol = "vodka";
+var moodIconEl = document.querySelectorAll('a');
+
+for (var i = 0; i < moodIconEl.length; i++) {
+    moodIconEl[i].addEventListener('click', moodSelection)
+}
 var mood;
 
 
+
+
 // **HOMEPAGE FUNCTIONS**
-
-function moodSelection (event) {
-    var moodSelection = event.Target.id 
-    switch (moodSelection) {
-        case 'party':
-            mood = partySongs;
-        case 'happy':
-            mood = happySongs;
-        case 'sad':
-            mood = sadSongs;
-        case 'romantic':
-            mood = romanticSongs;
-    }
-
-};
 
 // **YOUTUBE FEATURE**
 
 // youtube variables 
 
-var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
-var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
+
 
 // var youtubePlaylistUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=id&maxResults=1&q=dog&key=${youtubeApiKey}`;
 
@@ -36,46 +26,32 @@ var happySongs = 'uNd5kvrGHjk';
 var sadSongs = 'iiADY4xmH_o';
 var romanticSongs = '3cVjaKY02lA';
 
+function moodSelection (event) {
+    console.log(event);
+    var moodSelection = event.target.getAttribute('id') 
+    switch (moodSelection) {
+        case 'party':
+            console.log('check')
+            localStorage.setItem('mood', partySongs);
+            localStorage.setItem('alcohol', "vodka");
+        case 'happy':
+            localStorage.setItem('mood' ,happySongs);
+            localStorage.setItem('alcohol', "tequila");
+        case 'sad':
+            localStorage.setItem('mood', sadSongs);
+            localStorage.setItem('alcohol', "whisky");
+        case 'romantic':
+            localStorage.setItem('mood', romanticSongs);
+            localStorage.setItem('alcohol', "wine");
+    }
+    window.location = './Presentation.html'
+
+};
+
 // https://www.youtube.com/playlist?list=PLuIQYSWMlyQXtk7AVxC9aPJiEv3Pn_mal
 
 
-var videoId;
-
-// youtube functions
-
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        videoId: videoId,
-        playerVars: {
-        'playsinline': 1,
-        'autoplay': 1
-        },
-        events: {
-        'onReady': onPlayerReady,
-        // 'onStateChange': onPlayerStateChange
-        }
-    });
-    
-}
-
-function onPlayerReady() {
-    fetchYoutubeData();
-}
-
-function fetchYoutubeData() {
-    fetch(youtubeUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then (function (data) {
-        console.log(data);
-        videoId = 'WHuBW3qKm9g'
-        player.loadVideoById(`${sadSongs}`, 0);
-        // player.loadPlaylist(partySongs, 0, 0)
-    })
-}
-       
+  
 
 // **COCKTAIL FEATURE**
 
@@ -95,70 +71,9 @@ function fetchYoutubeData() {
 
 
 //COCKTAIL CODE START 
-//IN DUMMY TEST this java was linked to random HTML page. Need to link html drink-practice or random html to view. 
-
-//console.log('dummy.js loaded')
+console.log('dummy.js loaded')
 //making sure java has loaded 
 
-//may be unnecessary in the example
-//document.addEventListener('prechange', function(event) {
-  //  document.querySelector()
-//})
 
 
-//function getRandomCocktail() {
-    //fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-   // .then(
-    //function(response) {
-        //if (response.status !== 200) {
-        //console.log('Looks like there was a problem. Status Code: ' +
-           // response.status);
-       // return;
-      //  } <----comment all in to run 
-
-        // Examine the text in the response
-        //response.json().then(function(data) {
-        //console.log(data); 
-       // displayRandomCocktail(data); //<---open this and close above to display elements 
-       
-       //TO TEST: comment out console.log(data) and comment in displayRandomCocktail. To view data pulled from api comment out 
-       //displayRandomCocktail and comment in console.log(data). 
-       
-       //});
-    //}
-    //)
-    //.catch(function(err) {
-    //console.log('Fetch Error :-S', err);
-    //});
-//} <--- Need to comment all above minus TO TEST
-
-//getRandomCocktail();//runs the api to pull drink data 
-
-//function displayRandomCocktail(cocktail){
-    //console.log(cocktail.drinks[0].strDrink);<----comment in at LEAST one to run
-   // console.log(cocktail.drinks[0].strGlass);
-   // console.log(cocktail.drinks[0].strIngredient);
-   // console.log(cocktail.drinks[0].strInstructions);
-    //console.log(cocktail.drinks[0].strMeasure);
-    //when active will display from api the following: 
-
-
-// strDrink: Displays drink name 
-//strDrinkThumb: Displays picture of drink if available will need to input code for null result to display image not
-//found. 
-//strGlass: recommended serving glass (may not need) 
-//strIngredient: This is listed 1-15 and result is null if no other ingredients are present. Need to build this to continue
-//and pull ingredient and move one forward each time until it hits null then stop. 
-//strInstructions: displays how to make drink 
-//strMeasure: same as ingredient shows how much of each ingredient 
-
-//Current issues Ingredients and Measure have multiple variable that I need to possible make into an array to have console log pull data. 
-//They console log as undefined. Need to write code to pull all before
-//null and console log. Once complete can work on displaying to page. 
-
-//TO TEST: 
-//Comment in above variables from console.log and refresh page. Will currently display Drink Name, Glass type, Ingredients as undefined, Instructions,
-//Measure as undefined. 
-
-//To view data from current api see line 130.
 
