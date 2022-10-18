@@ -1,9 +1,25 @@
-function getRandomCocktail() {
+async function getRandomCocktail() {
     var alcohol = localStorage.getItem('alcohol');
-
+    var drinkChoice;
+    var drinkChoiceStr;
     console.log(alcohol)
 
     fetch(`https:www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`)
+    .then(function(response) {
+        response.json()
+        .then(function(data) {
+            console.log(data)
+            drinkChoice = data.drinks[0].idDrink.toString();
+            drinkChoiceStr = drinkChoice.toString();
+            console.log(drinkChoiceStr);
+            console.log(typeof drinkChoiceStr);
+            secondFunction(drinkChoiceStr);
+        })
+    })
+    
+
+    function secondFunction(drinkChoiceStr) {
+        fetch(`https:www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkChoiceStr}`)
     .then(
     function(response) {
         if (response.status !== 200) {
@@ -27,6 +43,7 @@ function getRandomCocktail() {
    .catch(function(err) {
    console.log('Fetch Error :-S', err);
    });
+    }
 } //<--- Need to comment all above minus TO TEST
 
 getRandomCocktail();//runs the api to pull drink data 
