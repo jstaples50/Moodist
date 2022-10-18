@@ -4,7 +4,7 @@ async function getRandomCocktail() {
     var drinkChoiceStr;
     console.log(alcohol)
 
-    fetch(`https:www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`)
     .then(function(response) {
         response.json()
         .then(function(data) {
@@ -19,7 +19,7 @@ async function getRandomCocktail() {
     
 
     function secondFunction(drinkChoiceStr) {
-        fetch(`https:www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkChoiceStr}`)
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkChoiceStr}`)
     .then(
     function(response) {
         if (response.status !== 200) {
