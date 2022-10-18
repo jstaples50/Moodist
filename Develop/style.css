@@ -6,6 +6,19 @@
     transition: 1s;
     color: #93a8ac;
 }
+.more-nav{
+    background-color: #4c5760;
+    margin: 10px;
+}
+.back-butt{
+    font-family: 'Silkscreen';
+    margin: 10px;
+    color: black;
+    background-color: #4c5760;
+}
+.butt-color{
+    color: #fff;
+}
 body{
     background-color: #4c5760;
 }
@@ -61,6 +74,7 @@ body{
         color: #fff;
     } 
 }
+
 @keyframes show-icon{
     0% {
         transform: translateY(400%);
@@ -69,6 +83,7 @@ body{
         transform: translateY(0);
     } 
 }
+
 @keyframes show-title-color{
     from{
         color: #4c5760;
@@ -77,6 +92,7 @@ body{
         color: #fff;
     } 
 }
+
 @keyframes slide-up{
     0% {
         transform: translateY(300%);
@@ -85,6 +101,7 @@ body{
         transform: translateY(0);
     } 
 }
+
 @keyframes slide-down{
     0% {
         transform: translateY(-300%);
@@ -93,54 +110,71 @@ body{
         transform: translateY(0);
     } 
 }
+
+@keyframes show-name-color{
+    from{
+        color: #4c5760;
+    } 
+    to {
+        color: #fff;
+    } 
+}
+
 #player {
     animation: 2s ease-out slide-down;
 }
 
 #drink{
     animation: 2s ease-out slide-up;
+
 }
 
+/* makes scrollbar transparent  */
 body::-webkit-scrollbar {
-    width: 0px;               /* width of the entire scrollbar */
-  }
+    width: 0px;               
+}
   
-  body::-webkit-scrollbar-track {
-    background: transparent;        /* color of the tracking area */
-  }
+body::-webkit-scrollbar-track {
+    background: transparent;        
+}
   
-  body::-webkit-scrollbar-thumb {
-    background-color: transparent;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 3px solid transparent;  /* creates padding around scroll thumb */
-  }
-  .waviy {
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;    
+    border-radius: 20px;       
+    border: 3px solid transparent;
+}
+/* makes scrollbar transparent  */
+
+.waviy {
     position: relative;
     font-size: 50px;
     -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
     color: #fff;
     animation: 3s ease-in show-title-color;
-  }
-  .waviy span {
+}
+
+.waviy span {
     font-family: 'Silkscreen';
     position: relative;
     display: inline-block;
     text-transform: uppercase;
     animation: 3s ease-in waviy;
     animation-delay: calc(.1s * var(--i));
-  }
-  @keyframes waviy {
+}
+
+@keyframes waviy {
     0%,40%,100% {
       transform: translateY(0)
     }
     20% {
       transform: translateY(-20px)
     }
-  }
+}
 
   .made-by{
     color: #fff;
     margin: 10px;
     letter-spacing: 3px;
-    opacity: .3;
+    opacity: .2;
+    animation: 5s ease-in show-name-color;
   }
