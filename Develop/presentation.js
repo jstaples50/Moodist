@@ -93,7 +93,7 @@ function displayRandomCocktail(cocktail){
 // *****
 
 var videoId;
-var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
+var youtubeApiKey = 'AIzaSyCSj2hbxJMyoHxuDJh7lXDg2LfWGAOchdw';
 var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
 // youtube functions
 
