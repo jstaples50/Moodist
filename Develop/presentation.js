@@ -13,13 +13,13 @@ async function getRandomCocktail() {
             drinkChoiceStr = drinkChoice.toString();
             console.log(drinkChoiceStr);
             console.log(typeof drinkChoiceStr);
+            secondFunction(drinkChoiceStr);
         })
     })
+    
 
-
-    // var searchByName = `https:www.thecocktaildb.com/api/json/v1/1/search.php?s=`
-
-    fetch(`https:www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkChoiceStr}`)
+    function secondFunction(drinkChoiceStr) {
+        fetch(`https:www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkChoiceStr}`)
     .then(
     function(response) {
         if (response.status !== 200) {
@@ -43,6 +43,7 @@ async function getRandomCocktail() {
    .catch(function(err) {
    console.log('Fetch Error :-S', err);
    });
+    }
 } //<--- Need to comment all above minus TO TEST
 
 getRandomCocktail();//runs the api to pull drink data 
