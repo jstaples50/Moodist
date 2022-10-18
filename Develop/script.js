@@ -1,6 +1,7 @@
+
 // **GLOBAL VARIABLE** 
 var alcohol = "";
-var moodIconEl = $('button');
+var moodIconEl = $('.btn');
 $(moodIconEl).on('click', moodSelection());
 var mood;
 
