@@ -34,25 +34,23 @@ function moodSelection (event) {
             console.log('check')
             localStorage.setItem('mood', partySongs);
             localStorage.setItem('alcohol', "vodka");
+            break;
         case 'happy':
             localStorage.setItem('mood' ,happySongs);
             localStorage.setItem('alcohol', "tequila");
+            break;
         case 'sad':
             localStorage.setItem('mood', sadSongs);
             localStorage.setItem('alcohol', "whisky");
+            break;
         case 'romantic':
             localStorage.setItem('mood', romanticSongs);
             localStorage.setItem('alcohol', "wine");
+            break;
     }
     window.location = './Presentation.html'
 
 };
-
-// https://www.youtube.com/playlist?list=PLuIQYSWMlyQXtk7AVxC9aPJiEv3Pn_mal
-
-
-  
-
 // **COCKTAIL FEATURE**
 
 
