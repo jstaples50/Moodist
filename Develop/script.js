@@ -1,29 +1,31 @@
 
 // **GLOBAL VARIABLE** 
 var alcohol = "";
-var moodIconEl = $('.btn');
-$(moodIconEl).on('click', moodSelection());
+var moodIconEl = doucmet.querySelector('a');
+moodIconEl.addEventListener('click', moodSelection());
 var mood;
 
 
 // **HOMEPAGE FUNCTIONS**
 
 function moodSelection (event) {
-    var moodSelection = event.Target.id 
+    console.log(event);
+    var moodSelection = event.target.id 
     switch (moodSelection) {
         case 'party':
-            mood = partySongs;
+            //mood = partySongs;
             alcohol = "vodka";
         case 'happy':
-            mood = happySongs;
+            //mood = happySongs;
             alcohol = "tequila";
         case 'sad':
-            mood = sadSongs;
+            //mood = sadSongs;
             alcohol = "whisky";
         case 'romantic':
-            mood = romanticSongs;
+            //mood = romanticSongs;
             alcohol = "wine";
     }
+    window.location.href="/Presentation.html"
 
 };
 
@@ -31,55 +33,55 @@ function moodSelection (event) {
 
 // youtube variables 
 
-var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
-var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
+//var youtubeApiKey = 'AIzaSyCI6sWXjrEI3KSY-_yPVxhyq7nEueF_eLY';
+//var youtubeUrl = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=dog&key=${youtubeApiKey}`;
 
 // var youtubePlaylistUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=id&maxResults=1&q=dog&key=${youtubeApiKey}`;
 
-var partySongs = 'JTjoH1HNkbs';
-var happySongs = 'uNd5kvrGHjk';
-var sadSongs = 'iiADY4xmH_o';
-var romanticSongs = '3cVjaKY02lA';
+//var partySongs = 'JTjoH1HNkbs';
+//var happySongs = 'uNd5kvrGHjk';
+//var sadSongs = 'iiADY4xmH_o';
+//var romanticSongs = '3cVjaKY02lA';
 
 // https://www.youtube.com/playlist?list=PLuIQYSWMlyQXtk7AVxC9aPJiEv3Pn_mal
 
 
-var videoId;
+//var videoId;
 
 // youtube functions
 
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        videoId: videoId,
-        playerVars: {
-        'playsinline': 1,
-        'autoplay': 1
-        },
-        events: {
-        'onReady': onPlayerReady,
+//var player;
+//function onYouTubeIframeAPIReady() {
+  //  player = new YT.Player('player', {
+    //    videoId: videoId,
+      //  playerVars: {
+        //'playsinline': 1,
+        //'autoplay': 1
+        //},
+        //events: {
+        //'onReady': onPlayerReady,
         // 'onStateChange': onPlayerStateChange
-        }
-    });
+       // }
+   // });
     
-}
+//}
 
-function onPlayerReady() {
-    fetchYoutubeData();
-}
+//function onPlayerReady() {
+  //  fetchYoutubeData();
+//}
 
-function fetchYoutubeData() {
-    fetch(youtubeUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then (function (data) {
-        console.log(data);
-        videoId = 'WHuBW3qKm9g'
-        player.loadVideoById(`${sadSongs}`, 0);
+//function fetchYoutubeData() {
+  //  fetch(youtubeUrl)
+    //.then(function (response) {
+      //  return response.json();
+    //})
+    //.then (function (data) {
+      //  console.log(data);
+       // videoId = 'WHuBW3qKm9g'
+       // player.loadVideoById(`${sadSongs}`, 0);
         // player.loadPlaylist(partySongs, 0, 0)
-    })
-}
+    //})
+//}
        
 
 // **COCKTAIL FEATURE**
@@ -107,8 +109,8 @@ console.log('dummy.js loaded')
 
 
 function getRandomCocktail() {
-    ingredient;
-    fetch(`https:www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+    //ingredient;
+    fetch(`https:www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcohol}`)
     .then(
     function(response) {
         if (response.status !== 200) {
