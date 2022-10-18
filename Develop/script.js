@@ -1,5 +1,5 @@
 // **GLOBAL VARIABLE** 
-
+var alcohol = "";
 var moodIconEl = $('button');
 $(moodIconEl).on('click', moodSelection());
 var mood;
@@ -12,12 +12,16 @@ function moodSelection (event) {
     switch (moodSelection) {
         case 'party':
             mood = partySongs;
+            alcohol = "vodka";
         case 'happy':
             mood = happySongs;
+            alcohol = "tequila";
         case 'sad':
             mood = sadSongs;
+            alcohol = "whisky";
         case 'romantic':
             mood = romanticSongs;
+            alcohol = "wine";
     }
 
 };
@@ -95,64 +99,82 @@ function fetchYoutubeData() {
 
 
 //COCKTAIL CODE START 
-//var result = document.querySelector("result");
+console.log('dummy.js loaded')
+//making sure java has loaded 
 
-//var url = "https:www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka";
 
-//var data = document.querySelector("tequila")
 
-//var userInp = data
 
-//var getInfo = () => {
+function getRandomCocktail() {
+    ingredient;
+    fetch(`https:www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`)
+    .then(
+    function(response) {
+        if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+            response.status);
+        return;
+        } //<----comment all in to run 
+
+        //Examine the text in the response
+       response.json().then(function(data) {
+       console.log(data); 
+       displayRandomCocktail(data);//<---open this and close above to display elements 
+       
+      //TO TEST: comment out console.log(data) and comment in displayRandomCocktail. To view data pulled from api comment out 
+      //displayRandomCocktail and comment in console.log(data). 
+       
+      });
+   }
+   )
+   .catch(function(err) {
+   console.log('Fetch Error :-S', err);
+   });
+} //<--- Need to comment all above minus TO TEST
+
+getRandomCocktail();//runs the api to pull drink data 
+
+function displayRandomCocktail(cocktail){
+   console.log(cocktail.drinks[0]);//<----comment in at LEAST one to run
+   //console.log(cocktail.drinks[0].strGlass);
+   //console.log(cocktail.drinks[0].strIngredient);
+   //console.log(cocktail.drinks[0].strInstructions);
+   //console.log(cocktail.drinks[0].strMeasure);
+
+   var drinkSection = document.querySelector('#drink');
+
+   var drinkName = document.createElement('h2');
+   //var drinkGlass = document.createElement('h2') don't need 
+   var drinkInstruct = document.createElement('h3')
+
+   
+   drinkName.innerHTML = cocktail.drinks[0].strDrink;
+   //drinkGlass.innerHTML = cocktail.drinks[0].strGlass; don't need 
+   drinkInstruct.innerHTML = cocktail.drinks[0].strInstructions;
  
-    //fetch(url + userInp)
-      //.then((response) => response.json())
-      //.then((data) => {
-        //document.querySelector("tequila").value = ""; // here is where I am confusing myself 
-        //console.log(data);
-        //console.log(data.drinks[0]);
-        //var myDrink = data.drinks[0];
-        ///console.log(myDrink.strDrink);
-        //console.log(myDrink.strDrinkThumb);
-        //console.log(myDrink.strInstructions);
-        //var count = 1;
-        //var ingredients = [];
-        //for (var i in myDrink) {
-          //var ingredient = "";
-          //var measure = "";
-          //if (i.startsWith("strIngredient") && myDrink[i]) {
-            //ingredient = myDrink[i];
-            //if (myDrink[`strMeasure` + count]) {
-              //measure = myDrink[`strMeasure` + count];
-            //} else {
-              //measure = "";
-            //}
-            //count += 1;
-            //ingredients.push(`${measure} ${ingredient}`);
-          //}
-        //}
-        //console.log(ingredients);
-        //result.innerHTML = `
-      //<img src=${myDrink.strDrinkThumb}>
-      //<h2>${myDrink.strDrink}</h2>
-      //<h3>Ingredients:</h3>
-      //<ul class="ingredients"></ul>
-      //<h3>Instructions:</h3>
-      //<p>${myDrink.strInstructions}</p>
-      //`;
-        //var ingredientsCon = document.querySelector(".ingredients");
-        //ingredients.forEach((item) => {
-          //var listItem = document.createElement("li");
-          //listItem.innerText = item;
-          //ingredientsCon.appendChild(listItem);
-        //});
-      //})
-      //.catch(() => {
-        //result.innerHTML = `<h3 class="msg">Please enter a valid input</h3>`;
-      //};//);
-  //};
+   drinkSection.appendChild(drinkName);
+   //drinkSection.appendChild(drinkGlass); don't need 
+   drinkSection.appendChild(drinkInstruct);
 
-//window.addEventListener("load", getInfo);
+   //var img = document.createElement('img');
+   //img.src = cocktail.drinks[0].strDrinkthumb;
+
+   //drinkSection.appendChild(img);
+
+   for(let i=1; i<16; i++){
+    console.log();
+
+    if(cocktail.drinks[0][`strIngredient${i}`]== null || cocktail.drinks[0[`strIngredient${i}`]]== '' ){
+        break;
+    }
+
+    var ingredient = document.createElement('li');
+    ingredient.innerHTML = cocktail.drinks[0][`strMeasure${i}`] + ': ' + cocktail.drinks[0][`strIngredient${i}`];
+
+    drinkSection.appendChild(ingredient);
+   }
+
+}
 
 
 
