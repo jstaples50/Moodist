@@ -28,7 +28,7 @@ var romanticSongs = '3cVjaKY02lA';
 
 function moodSelection (event) {
     console.log(event);
-    var moodSelection = event.target.id 
+    var moodSelection = event.target.getAttribute('id') 
     switch (moodSelection) {
         case 'party':
             console.log('check')
