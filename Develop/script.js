@@ -19,12 +19,12 @@ var mood;
 
 
 
-// var youtubePlaylistUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=id&maxResults=1&q=dog&key=${youtubeApiKey}`;
+ 
 
-//var partySongs = 'JTjoH1HNkbs';
-//var happySongs = 'uNd5kvrGHjk';
-//var sadSongs = 'iiADY4xmH_o';
-//var romanticSongs = '3cVjaKY02lA';
+var partySongs = 'JTjoH1HNkbs';
+var happySongs = 'uNd5kvrGHjk';
+var sadSongs = 'iiADY4xmH_o';
+var romanticSongs = '3cVjaKY02lA';
 
 function moodSelection (event) {
     console.log(event);
@@ -48,7 +48,7 @@ function moodSelection (event) {
 
 };
 
-// https://www.youtube.com/playlist?list=PLuIQYSWMlyQXtk7AVxC9aPJiEv3Pn_mal
+
 
 
   
