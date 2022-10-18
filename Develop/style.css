@@ -36,6 +36,7 @@ body{
 .space-box{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #player{
     float: left;
@@ -64,6 +65,9 @@ body{
     background-color: black;
     transition: 1s;
     margin: 30px;
+    color: #fff;
+    margin: 40px;
+    padding: 20px;
 }
 
 @keyframes show-icon-color{
