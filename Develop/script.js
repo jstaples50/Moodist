@@ -8,18 +8,8 @@ for (var i = 0; i < moodIconEl.length; i++) {
 }
 var mood;
 
-
-
-
-// **HOMEPAGE FUNCTIONS**
-
-// **YOUTUBE FEATURE**
-
 // youtube variables 
 
-
-
-// var youtubePlaylistUrl = `https://youtube.googleapis.com/youtube/v3/playlists?part=id&maxResults=1&q=dog&key=${youtubeApiKey}`;
 
 var partySongs = 'JTjoH1HNkbs';
 var happySongs = 'uNd5kvrGHjk';
@@ -51,27 +41,3 @@ function moodSelection (event) {
     window.location = './Presentation.html'
 
 };
-// **COCKTAIL FEATURE**
-
-
-
-
-
-
-// **TESTS**
-
-// **EXECUTION**
-
-
-
-
-
-
-
-//COCKTAIL CODE START 
-console.log('dummy.js loaded')
-//making sure java has loaded 
-
-
-
-
